@@ -22,3 +22,10 @@ Statisk site (ren HTML/CSS/JS). Ingen build-step.
 - `index.html` – forsiden (alt CSS/JS inline)
 - `assets/` – billeder. Erstat med originalfiler i høj opløsning (samme filnavne) før lancering.
 - `vercel.json` – clean URLs og cache-headers til assets
+
+## Ikoner, deling og Google
+- `assets/favicon.*`, `apple-touch-icon.png`, `icon-*.png` – ikoner til alle browsere/enheder. `site.webmanifest` binder dem sammen.
+- `assets/og-image.jpg` (1200×630) – billedet der vises ved deling på LinkedIn, Facebook, Slack m.fl.
+- JSON-LD i `<head>` (Organization, WebSite, FAQPage) + `robots.txt` og `sitemap.xml` – til Googles forhåndsvisning.
+- Alle absolutte URL'er peger på `https://genrise.com`. Bruger I et andet domæne, så søg/erstat i `index.html`, `robots.txt` og `sitemap.xml`.
+- Efter lancering: tilføj sitet i Google Search Console og indsend `sitemap.xml`. Test deling på opengraph.xyz og LinkedIn Post Inspector.
