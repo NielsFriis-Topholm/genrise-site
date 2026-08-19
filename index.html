@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genrise — Skandinavisk Shopify-vækstpartner</title>
+<meta name="description" content="Vi designer, udvikler og skalerer Shopify-brands i Skandinavien – i en resultatdrevet partnerskabsmodel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C0C0D;
+    --ink-2:#161618;
+    --paper:#FFFFFF;
+    --paper-2:#F5F4F1;
+    --line:#E4E2DD;
+    --line-dark:rgba(255,255,255,.14);
+    --muted:#6E6E6E;
+    --muted-dark:rgba(255,255,255,.62);
+    --display:"Instrument Sans",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --w:1180px;
+    --pad:clamp(20px,5vw,64px);
+    --sec:clamp(80px,10vw,136px);
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+  body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.02em;line-height:1.08;margin:0}
+  p{margin:0}
+  .wrap{max-width:var(--w);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+  .sec{padding-top:var(--sec);padding-bottom:var(--sec)}
+  .dark{background:var(--ink);color:#fff}
+  .tint{background:var(--paper-2)}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500}
+  .dark .eyebrow{color:var(--muted-dark)}
+  .lead{font-size:clamp(17px,1.35vw,19px);color:var(--muted);max-width:56ch}
+  .dark .lead{color:var(--muted-dark)}
+  h2{font-size:clamp(30px,3.6vw,46px);max-width:20ch}
+  .head{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;margin-bottom:56px}
+  .head .lead{margin-top:14px}
+  .center{text-align:center}
+  .center h2,.center .lead{margin-left:auto;margin-right:auto}
+  .center .head{grid-template-columns:1fr;justify-items:center}
+  :focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:4px}
+
+  /* buttons — én primær, én sekundær */
+  .btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 20px;border-radius:999px;font-size:14px;font-weight:500;letter-spacing:.005em;border:1px solid transparent;transition:transform .18s ease,background .18s ease,color .18s ease;white-space:nowrap}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{background:#26262A}
+  .dark .btn-primary{background:#fff;color:var(--ink)}
+  .dark .btn-primary:hover{background:#EDEDED}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .dark .btn-ghost{border-color:var(--line-dark);color:#fff}
+  .dark .btn-ghost:hover{border-color:#fff}
+  .btn .arr{width:14px;height:14px}
+
+  /* NAV — signatur: én samlet bjælke, transparent over hero, frosted på scroll */
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease,backdrop-filter .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .nav.scrolled{background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-color:var(--line);color:var(--ink)}
+  .nav:not(.scrolled){color:#fff}
+  .logo{font-family:var(--display);font-weight:600;letter-spacing:.06em;font-size:15px}
+  .links{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+  .links a{display:block;padding:8px 12px;border-radius:999px;font-size:14px;opacity:.85;transition:opacity .15s,background .15s}
+  .links a:hover{opacity:1;background:rgba(127,127,127,.12)}
+  .navright{display:flex;align-items:center;gap:14px}
+  .lang{display:inline-flex;border:1px solid currentColor;border-radius:999px;padding:2px;font-size:11px;letter-spacing:.06em;opacity:.85}
+  .lang span{padding:4px 8px;border-radius:999px}
+  .lang .on{background:currentColor}
+  .lang .on b{color:var(--ink);mix-blend-mode:normal;font-weight:500}
+  .nav:not(.scrolled) .lang .on b{color:var(--ink)}
+  .nav.scrolled .lang .on b{color:#fff}
+  .nav .btn{height:40px;padding:0 16px}
+  .nav:not(.scrolled) .btn-primary{background:#fff;color:var(--ink)}
+  .burger{display:none;background:none;border:0;color:inherit;width:40px;height:40px;cursor:pointer}
+  @media (max-width:860px){.links,.lang{display:none}.burger{display:block}}
+
+  /* HERO */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#3B4640 url("/assets/hero.jpg") center right/cover no-repeat;}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,12,11,.62) 0%,rgba(10,12,11,.35) 45%,rgba(10,12,11,.05) 75%),linear-gradient(180deg,rgba(0,0,0,.3),transparent 25%,rgba(12,12,13,.85) 100%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:1;width:100%;padding-top:150px;padding-bottom:56px}
+  .hero h1{font-size:clamp(42px,7vw,88px);max-width:12ch;letter-spacing:-.03em}
+  .hero .lead{margin:26px 0 34px;color:rgba(255,255,255,.72);max-width:52ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .btn-primary{background:#fff;color:var(--ink)}
+  .hero .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+  .clients{margin-top:72px;padding-top:26px;border-top:1px solid rgba(255,255,255,.18);display:flex;align-items:center;gap:clamp(24px,5vw,64px);flex-wrap:wrap}
+  .clients small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-right:auto}
+  .clients span{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:rgba(255,255,255,.85)}
+  .clients .serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:.1em}
+
+  /* STATS */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stat{padding:36px 28px;border-left:1px solid var(--line)}
+  .stat:first-child{border-left:0}
+  .stat b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(38px,4.6vw,60px);letter-spacing:-.03em;line-height:1}
+  .stat span{display:block;margin-top:14px;font-size:14px}
+  .stat small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+  @media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}}
+
+  /* SERVICES (dark anchor) */
+  .svc{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,96px);align-items:start}
+  .svc .lead+.lead{margin-top:16px}
+  .list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-dark)}
+  .list li{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line-dark);font-size:16px}
+  .list li i{font-style:normal;font-family:var(--display);font-size:12px;letter-spacing:.06em;color:var(--muted-dark);min-width:28px}
+  .partners{margin-top:88px;padding-top:28px;border-top:1px solid var(--line-dark);display:flex;gap:clamp(24px,5vw,60px);align-items:center;flex-wrap:wrap}
+  .partners small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark);margin-right:auto}
+  .partners span{font-family:var(--display);font-weight:600;font-size:16px;color:rgba(255,255,255,.85);letter-spacing:-.01em}
+  @media (max-width:860px){.svc{grid-template-columns:1fr}}
+
+  /* CASES */
+  .rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,31%);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;margin-right:calc(-1*var(--pad));padding-right:var(--pad);scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .card{scroll-snap-align:start;aspect-ratio:3/4;border-radius:var(--r);position:relative;overflow:hidden;color:#fff;display:flex;align-items:flex-end;padding:22px}
+  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.6))}
+  .card > *{position:relative;z-index:1}
+  .card:not(.c5) .brand{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .card .brand{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-size:14px}
+  .card .cat{font-size:12px;color:rgba(255,255,255,.7);margin-top:4px}
+  .c1{background:url("/assets/occitane.jpg") center/cover no-repeat}
+  .c2{background:url("/assets/balmain.jpg") center/cover no-repeat}
+  .c3{background:url("/assets/mayoral.jpg") center/cover no-repeat}
+  .c4{background:url("/assets/sensai.jpg") center/cover no-repeat}
+  .c5{background:linear-gradient(160deg,#9A9A9A,#2E2E2E)}
+  .card:hover{transform:translateY(-3px)}
+  .card{transition:transform .25s ease}
+
+  /* VIDEO + USP (tint) */
+  .video{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/8.5;background:#1a1512 url("/assets/video.jpg") center/cover no-repeat;display:grid;place-items:center;color:#fff}
+  .video::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.15)}
+  .play{position:relative;width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);display:grid;place-items:center;cursor:pointer;transition:transform .2s}
+  .play:hover{transform:scale(1.06)}
+  .play::after{content:"";border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+  .usp{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px}
+  .usp div{padding-top:22px;border-top:1px solid var(--ink)}
+  .usp h3{font-size:19px;margin-bottom:8px}
+  .usp p{color:var(--muted);font-size:15px}
+  @media (max-width:860px){.usp{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.usp{grid-template-columns:1fr}}
+
+  /* TESTIMONIALS */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .quote{display:grid;grid-template-columns:150px 1fr;background:var(--paper-2);border-radius:var(--r);overflow:hidden}
+  .quote .ph{background:url("/assets/agnes.jpg") center/cover no-repeat}
+  .quote .ph.b{background:url("/assets/sigrid.jpg") center/cover no-repeat}
+  .quote figure{margin:0;padding:28px 30px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+  .quote blockquote{margin:0;font-family:var(--display);font-size:19px;line-height:1.35;letter-spacing:-.01em}
+  .quote figcaption{font-size:13px;color:var(--muted)}
+  .quote figcaption b{display:block;color:var(--ink);font-weight:500}
+  @media (max-width:860px){.quotes{grid-template-columns:1fr}.quote{grid-template-columns:110px 1fr}}
+
+  /* TEAM */
+  .team{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:24px}
+  .member .ph{aspect-ratio:4/5;border-radius:var(--r);background:#ddd center/cover no-repeat;filter:grayscale(1)}
+  .member .ph.n{background-image:url("/assets/niels.jpg")}
+  .member .ph.c{background-image:url("/assets/christian.jpg")}
+  .member h3{font-size:18px;margin:16px 0 4px}
+  .member p{font-size:14px;color:var(--muted)}
+  .member a{font-size:13px;display:inline-block;margin-top:6px;border-bottom:1px solid var(--line)}
+  @media (max-width:520px){.team{grid-template-columns:1fr 1fr}}
+
+  /* BUILD */
+  .build{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .build div{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+  .build h3{font-size:18px;margin:0 0 10px}
+  .build p{font-size:15px;color:var(--muted)}
+  .build svg{width:26px;height:26px;margin-bottom:22px}
+  @media (max-width:760px){.build{grid-template-columns:1fr}}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-size:17px;font-family:var(--display);font-weight:500;letter-spacing:-.01em}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary span{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none;transition:transform .25s ease,background .2s}
+  .faq details[open] summary span{transform:rotate(45deg);background:var(--ink);color:#fff;border-color:var(--ink)}
+  .faq .a{padding:0 0 22px;color:var(--muted);max-width:60ch;font-size:15px}
+
+  /* CTA */
+  .cta-sec{position:relative;overflow:hidden;background:#0C0C0D url("/assets/cta.jpg") center/cover no-repeat}
+  .cta-sec::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,12,13,.85),rgba(12,12,13,.35))}
+  .cta-sec .wrap{position:relative;z-index:1}
+  .cta-sec h2{font-size:clamp(34px,5vw,64px);max-width:16ch}
+  .cta-sec .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+
+  /* FOOTER */
+  footer{padding:64px 0 32px;border-top:1px solid var(--line)}
+  .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:32px}
+  .fgrid h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:500}
+  .fgrid ul{list-style:none;padding:0;margin:0;font-size:14px}
+  .fgrid li{margin-bottom:8px}
+  .fgrid p{font-size:14px;color:var(--muted);max-width:26ch;margin-top:12px}
+  .fbot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+  .badges{display:flex;gap:22px;font-size:12px;letter-spacing:.04em}
+  @media (max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+  @media (max-width:760px){.head{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">GENRISE</a>
+    <ul class="links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#cases">Cases</a></li>
+      <li><a href="#om">Om os</a></li>
+      <li><a href="#priser">Priser</a></li>
+    </ul>
+    <div class="navright">
+      <span class="lang" aria-label="Sprog"><span class="on"><b>DA</b></span><span>EN</span></span>
+      <a class="btn btn-primary" href="#kontakt">Book gratis vækstanalyse</a>
+      <button class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow" style="color:rgba(255,255,255,.6)">Vækst dit brand</p>
+      <h1>Skandinavisk Shopify-vækstpartner</h1>
+      <p class="lead">Vi designer, udvikler skræddersyede løsninger, kører betalte annoncer og leverer ugentlige strategimøder som din personlige Shopify-partner – i en incitamentsbaseret, resultatdrevet model.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#kontakt">Book gratis vækstanalyse <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn-ghost" href="#services">Se hvordan vi arbejder</a>
+      </div>
+      <div class="clients">
+        <small>Brands vi har skaleret</small>
+        <span class="serif">L'Occitane</span><span>Balmain</span><span>Mayoral</span><span class="serif">Sensai</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat rv"><b>100M+</b><span>Genererede visninger</span><small>På tværs af betalte kampagner</small></div>
+        <div class="stat rv"><b>10M+</b><span>Genereret omsætning</span><small>For partnerbrands</small></div>
+        <div class="stat rv"><b>8x</b><span>Opnået ROAS</span><small>Afkast af annonceforbrug</small></div>
+        <div class="stat rv"><b>50+</b><span>Brands skaleret</span><small>I hele Norden</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" id="services">
+    <div class="wrap">
+      <div class="svc">
+        <div class="rv">
+          <p class="eyebrow">Hvad vi gør</p>
+          <h2>Én partner til hele din Shopify-vækst</h2>
+          <p class="lead" style="margin-top:22px">Vi hjælper næste generations brands med at nå deres fulde potentiale i et social-first miljø, hvor kampen om forbrugernes opmærksomhed er hård.</p>
+          <p class="lead">Vi designer, udvikler og skalerer FMCG-brands på Shopify, understøttet af data, forecasting, P&amp;L, AI og realtids e-handelsindsigter – som en udvidet arm, der sikrer et stærkt fundament.</p>
+          <div style="margin-top:32px"><a class="btn btn-ghost" href="#kontakt">Se alle services</a></div>
+        </div>
+        <ul class="list rv">
+          <li><i>Produkt</i>Sourcer og validerer vinderprodukter</li>
+          <li><i>Brand</i>Bygger din brandidentitet &amp; positionering</li>
+          <li><i>Store</i>Udvikler og optimerer din Shopify-store</li>
+          <li><i>UX</i>Optimerer UX &amp; CRO</li>
+          <li><i>Content</i>Contentstrategi &amp; kreativ retning</li>
+          <li><i>Ads</i>Kører performance-drevne annoncer</li>
+          <li><i>Strategi</i>Strategisk rådgivning til e-handel</li>
+          <li><i>Support</i>Personlig guidance og hjælp</li>
+        </ul>
+      </div>
+      <div class="partners">
+        <small>Trusted partners</small>
+        <span>shopify</span><span>klaviyo</span><span>TikTok</span><span>Meta</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="cases">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <p class="eyebrow">Next-generation brands</p>
+          <h2>Vi transformerer ambitiøse digitale brands</h2>
+          <p class="lead">I partnerskab med brands indenfor beauty, fashion og lifestyle.</p>
+        </div>
+        <a class="btn btn-ghost" href="#cases">Se alle cases</a>
+      </div>
+      <div class="rail rv">
+        <a class="card c1" href="#"><div><div class="brand">L'Occitane</div><div class="cat">Beauty · Paid social</div></div></a>
+        <a class="card c2" href="#"><div><div class="brand">Balmain</div><div class="cat">Fashion · Shopify Plus</div></div></a>
+        <a class="card c3" href="#"><div><div class="brand">Mayoral</div><div class="cat">Kids · CRO</div></div></a>
+        <a class="card c4" href="#"><div><div class="brand">Sensai</div><div class="cat">Skincare · Content</div></div></a>
+        <a class="card c5" href="#"><div><div class="brand">Dit brand</div><div class="cat">Næste case?</div></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tint" id="om">
+    <div class="wrap">
+      <div class="center head rv">
+        <div>
+          <p class="eyebrow">Sådan arbejder vi</p>
+          <h2>Med kunder i hele Skandinavien forener vi Shopify, performance og vækstsystemer i én problemfri drift</h2>
+        </div>
+      </div>
+      <div class="video rv"><button class="play" aria-label="Afspil video"></button></div>
+      <div class="usp rv">
+        <div><h3>360° Shopify-vækstløsning</h3><p>Vi håndterer det hele. Penge ind. Stress ud.</p></div>
+        <div><h3>Resultatbaseret partnerskab</h3><p>At vækste er svært. Vi gør det nemt.</p></div>
+        <div><h3>Altid tilgængelig</h3><p>Vores team med rødder i Danmark er altid klar til at hjælpe dig.</p></div>
+        <div><h3>Ingen høje faste honorarer</h3><p>Vi værdsætter langsigtede partnerskaber.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="center head rv">
+        <div>
+          <p class="eyebrow">Bygget til at skalere</p>
+          <h2>Grundlæggere, der skalerer seriøse brands, stoler på os</h2>
+          <p class="lead">Skalering handler ikke om at bevæge sig hurtigere. Det handler om at bygge det rette fundament, før væksten accelererer.</p>
+        </div>
+      </div>
+      <div class="quotes rv">
+        <div class="quote"><div class="ph"></div>
+          <figure><blockquote>“Vi begyndte at arbejde sammen i april, og siden da er vores salg mere end fordoblet. Kan varmt anbefales.”</blockquote><figcaption><b>Agnes</b>Stifter</figcaption></figure></div>
+        <div class="quote"><div class="ph b"></div>
+          <figure><blockquote>“Genrise har været en fremragende partner gennem hele processen. Deres tekniske ekspertise og stærke faglige grundlag har gjort samarbejdet gnidningsfrit.”</blockquote><figcaption><b>Sigrid</b>Ejer</figcaption></figure></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tint">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <p class="eyebrow">Teamet</p>
+          <h2>Et team med Shopify-baggrund</h2>
+          <p class="lead">Siden 2023 har vi hjulpet og arbejdet med nogle af de hurtigst voksende brands i Skandinavien – fra skincare, supplements, fashion og jewelry til interior, lifestyle og FMCG. Alle på teamet har en naturlig interesse for og online baggrund fra Shopify.</p>
+        </div>
+      </div>
+      <div class="team rv">
+        <div class="member"><div class="ph n"></div><h3>Niels Friis-Topholm</h3><p>CEO</p><a href="mailto:niels@genrise.com">niels@genrise.com</a></div>
+        <div class="member"><div class="ph c"></div><h3>Christian Friis-Topholm</h3><p>Specialist i e-handelsvækst</p><a href="mailto:christian@genrise.com">christian@genrise.com</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <p class="eyebrow">Build a brand</p>
+          <h2>Skab dit eget brand</h2>
+          <p class="lead">Vi giver dig det fulde team og den fulde infrastruktur til at lancere og vækste dit eget produkt og brand.</p>
+        </div>
+        <a class="btn btn-ghost" href="#kontakt">Læs om Build a Brand</a>
+      </div>
+      <div class="build rv">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16v13H4zM9 7V4h6v3M8 14l3 3 5-6"/></svg><h3>Produktudvikling</h3><p>Vores interne designere og produktudviklere arbejder sammen med dig om at skabe produkter af højeste kvalitet.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20h18M4 20V9l5 3V9l5 3V9l5 3v8"/></svg><h3>Produktion</h3><p>Vores netværk af over 100 fabrikker er gennemtestede med en dokumenteret track record.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h18v14H3zM3 10h18M7 15h4"/></svg><h3>Din e-handelsbutik</h3><p>Vi bygger og skalerer din e-handelsbutik, så dit publikum kan få den bedste købsoplevelse.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tint" id="priser">
+    <div class="wrap">
+      <div class="center head rv">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2>Spørgsmål stiftere ofte stiller</h2>
+          <p class="lead">Klare svar. Ingen overraskelser.</p>
+        </div>
+      </div>
+      <div class="faq rv">
+        <details open><summary>Hvilke typer brands arbejder I med?<span>+</span></summary><div class="a">Primært ambitiøse D2C-brands inden for beauty, fashion, lifestyle og FMCG, der allerede sælger – eller er klar til at sælge – på Shopify.</div></details>
+        <details><summary>Hvad betyder jeres performance model?<span>+</span></summary><div class="a">Vores honorar er bundet op på resultaterne. Ingen høje faste beløb – vi vokser, når du vokser.</div></details>
+        <details><summary>Arbejder I kun med Shopify-brands?<span>+</span></summary><div class="a">Ja. Vi fokuserer udelukkende på Shopify, fordi det er en af de stærkeste platforme for direct-to-consumer brands.</div></details>
+        <details><summary>Hvor hurtigt kan vi forvente resultater?<span>+</span></summary><div class="a">Det afhænger af udgangspunktet, men typisk ser vi de første målbare effekter inden for de første 60–90 dage.</div></details>
+        <details><summary>Hvordan måler vi succes i et samarbejde?<span>+</span></summary><div class="a">På omsætning, ROAS, konverteringsrate og margin – i ét fælles dashboard, gennemgået på ugentlige strategimøder.</div></details>
+        <details><summary>Kræver I lange kontrakter?<span>+</span></summary><div class="a">Nej. Vi tror på partnerskaber, der holder, fordi de virker – ikke fordi de er låst.</div></details>
+        <details><summary>Bygger I nye Shopify-butikker, eller optimerer I kun eksisterende?<span>+</span></summary><div class="a">Begge dele. Vi bygger fra bunden og optimerer eksisterende butikker på UX, CRO og teknik.</div></details>
+        <details><summary>Hvordan kommunikerer I med jeres kunder?<span>+</span></summary><div class="a">Ugentlige møder, en fælles Slack-kanal og 24/7-support.</div></details>
+        <details><summary>Hvilken teknologi bruger I?<span>+</span></summary><div class="a">Shopify, Klaviyo, Meta, TikTok, Google og en række data- og AI-værktøjer til forecasting og indsigter.</div></details>
+        <details><summary>Hvad gør jeg, hvis jeg ejer WooCommerce?<span>+</span></summary><div class="a">Vi hjælper med migreringen til Shopify som første skridt i samarbejdet.</div></details>
+        <details><summary>Hvordan får jeg en gratis hjemmeside fra GENRISE?<span>+</span></summary><div class="a">Book en gratis vækstanalyse – så gennemgår vi mulighederne sammen.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark cta-sec" id="kontakt">
+    <div class="wrap rv">
+      <p class="eyebrow">Lad os vækste dit brand</p>
+      <h2>Klar til at vækste dit Shopify-brand?</h2>
+      <p class="lead" style="margin-top:20px">Få en gratis vækstanalyse og en klar plan for dit næste skridt.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="#">Ja, jeg vil gerne vækste <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn-ghost" href="mailto:info@genrise.com">info@genrise.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><span class="logo">GENRISE</span><p>Skandinavisk vækstpartner for Shopify-butikker.</p></div>
+      <div><h4>Menu</h4><ul><li><a href="#services">Services</a></li><li><a href="#cases">Cases</a></li><li><a href="#om">Om os</a></li><li><a href="#priser">Priser</a></li><li><a href="#priser">Ofte stillede spørgsmål</a></li><li><a href="#">Karriere</a></li></ul></div>
+      <div><h4>Juridisk</h4><ul><li><a href="#">Privatlivspolitik</a></li><li><a href="#">Handelsbetingelser</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li><a href="mailto:info@genrise.com">info@genrise.com</a></li><li>Højbovej 1, 8600 Silkeborg, Danmark</li></ul></div>
+    </div>
+    <div class="fbot">
+      <div class="badges"><span>shopify partner</span><span>TikTok Marketing Partner</span><span>Meta Business Partner</span><span>Google Partner</span></div>
+      <span>© Genrise 2026. Alle rettigheder forbeholdes.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
