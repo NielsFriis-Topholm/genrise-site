@@ -49,4 +49,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://genrise.com/priser</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/priser"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/priser?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://genrise.com/hvorfor-genrise</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/hvorfor-genrise"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/hvorfor-genrise?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
