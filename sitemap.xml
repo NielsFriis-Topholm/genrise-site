@@ -14,4 +14,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://genrise.com/paid-acquisition</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/paid-acquisition"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/paid-acquisition?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://genrise.com/shopify-websites</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/shopify-websites"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/shopify-websites?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
