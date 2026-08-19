@@ -28,4 +28,25 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://genrise.com/om-os</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/om-os"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/om-os?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://genrise.com/karriere</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/karriere"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/karriere?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://genrise.com/build-a-brand</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/build-a-brand"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/build-a-brand?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
