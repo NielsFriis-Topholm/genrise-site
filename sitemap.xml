@@ -63,4 +63,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://genrise.com/strategy-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/strategy-advisory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/strategy-advisory?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

@@ -452,6 +452,8 @@
   .related b{display:block;font-family:var(--display);font-weight:500;font-size:16px;margin-bottom:4px}
   .related span{font-size:13px;color:var(--muted)}
   @media (max-width:860px){.disc,.summary,.related{grid-template-columns:1fr}.disc{gap:22px}}
+  .mi{position:relative;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 999px rgba(0,0,0,.16)}
+  .mil{color:#fff;font-family:var(--display);font-weight:500;font-size:13.5px;letter-spacing:.01em;text-align:center;padding:0 10px;text-shadow:0 1px 10px rgba(0,0,0,.55);pointer-events:none}
 </style>
 </head>
 <body>
@@ -462,11 +464,11 @@
       <li class="has-menu" data-menu>
         <a href="/#services" aria-haspopup="true" aria-expanded="false">Services</a>
         <div class="mega" role="menu" aria-label="Services">
-          <a href="/framework" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-framework.jpg')"></div><b>Genrise Framework</b><span>Vores samlede vækstmodel – fra fundament til skalering, i én partnerskabsaftale.</span></a>
-          <a href="/paid-acquisition" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-paid.jpg')"></div><b>Paid Acquisition</b><span>Meta-, TikTok- og Google-annoncer drevet af data og fokus på ROAS.</span></a>
-          <a href="/shopify-websites" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-websites.jpg')"></div><b>Shopify Websites</b><span>Design og udvikling af Shopify-butikker bygget til konvertering.</span></a>
-          <a href="/#services" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-strategy.jpg')"></div><b>Strategy &amp; Advisory</b><span>Ugentlig sparring, forecasting, P&amp;L og strategisk retning for din e-handel.</span></a>
-          <a href="/build-a-brand" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-build.jpg')"></div><b>Build a Brand</b><span>Lancér dit eget produkt og brand med vores team, fabrikker og butik.</span></a>
+          <a href="/framework" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-framework.jpg')"><span class="mil">Genrise Framework</span></div><b>Genrise Framework</b><span>Vores samlede vækstmodel – fra fundament til skalering, i én partnerskabsaftale.</span></a>
+          <a href="/paid-acquisition" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-paid.jpg')"><span class="mil">Paid Acquisition</span></div><b>Paid Acquisition</b><span>Meta-, TikTok- og Google-annoncer drevet af data og fokus på ROAS.</span></a>
+          <a href="/shopify-websites" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-websites.jpg')"><span class="mil">Shopify Websites</span></div><b>Shopify Websites</b><span>Design og udvikling af Shopify-butikker bygget til konvertering.</span></a>
+          <a href="/strategy-advisory" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-strategy.jpg')"><span class="mil">Strategy & Advisory</span></div><b>Strategy &amp; Advisory</b><span>Ugentlig sparring, forecasting, P&amp;L og strategisk retning for din e-handel.</span></a>
+          <a href="/build-a-brand" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-build.jpg')"><span class="mil">Build a Brand</span></div><b>Build a Brand</b><span>Lancér dit eget produkt og brand med vores team, fabrikker og butik.</span></a>
           <a href="/#services" class="all" role="menuitem"><em>Usikker på hvad I har brug for?</em><b style="margin:0;font-size:13px">Book en gratis vækstanalyse →</b></a>
         </div>
       </li>
@@ -474,9 +476,9 @@
       <li class="has-menu" data-menu>
         <a href="/om-os" aria-haspopup="true" aria-expanded="false">Om os</a>
         <div class="mega small" role="menu" aria-label="Om os">
-          <a href="/om-os" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-who.jpg')"></div><b>Hvem vi er</b><span>Teamet, historien og måden vi arbejder med brands på.</span></a>
-          <a href="/hvorfor-genrise" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-why.jpg')"></div><b>Hvorfor Genrise</b><span>Resultatbaseret, altid tilgængelig og bygget til at skalere på Shopify.</span></a>
-          <a href="/karriere" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-careers.jpg')"></div><b>Karriere</b><span>Ledige stillinger og hvordan det er at arbejde hos Genrise.</span></a>
+          <a href="/om-os" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-who.jpg')"><span class="mil">Hvem vi er</span></div><b>Hvem vi er</b><span>Teamet, historien og måden vi arbejder med brands på.</span></a>
+          <a href="/hvorfor-genrise" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-why.jpg')"><span class="mil">Hvorfor Genrise</span></div><b>Hvorfor Genrise</b><span>Resultatbaseret, altid tilgængelig og bygget til at skalere på Shopify.</span></a>
+          <a href="/karriere" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-careers.jpg')"><span class="mil">Karriere</span></div><b>Karriere</b><span>Ledige stillinger og hvordan det er at arbejde hos Genrise.</span></a>
         </div>
       </li>
       <li><a href="/priser">Priser</a></li>
@@ -492,18 +494,18 @@
 <nav class="drawer" id="drawer" aria-label="Mobilmenu">
   <a class="top" href="/#services" data-close>Services</a>
   <div class="sub">
-    <a href="/framework" data-close><div class="mi" style="background-image:url('/assets/menu-framework.jpg')"></div><b>Genrise Framework</b></a>
-    <a href="/paid-acquisition" data-close><div class="mi" style="background-image:url('/assets/menu-paid.jpg')"></div><b>Paid Acquisition</b></a>
-    <a href="/shopify-websites" data-close><div class="mi" style="background-image:url('/assets/menu-websites.jpg')"></div><b>Shopify Websites</b></a>
-    <a href="/#services" data-close><div class="mi" style="background-image:url('/assets/menu-strategy.jpg')"></div><b>Strategy &amp; Advisory</b></a>
-    <a href="/build-a-brand" data-close><div class="mi" style="background-image:url('/assets/menu-build.jpg')"></div><b>Build a Brand</b></a>
+    <a href="/framework" data-close><div class="mi" style="background-image:url('/assets/menu-framework.jpg')"><span class="mil">Genrise Framework</span></div><b>Genrise Framework</b></a>
+    <a href="/paid-acquisition" data-close><div class="mi" style="background-image:url('/assets/menu-paid.jpg')"><span class="mil">Paid Acquisition</span></div><b>Paid Acquisition</b></a>
+    <a href="/shopify-websites" data-close><div class="mi" style="background-image:url('/assets/menu-websites.jpg')"><span class="mil">Shopify Websites</span></div><b>Shopify Websites</b></a>
+    <a href="/strategy-advisory" data-close><div class="mi" style="background-image:url('/assets/menu-strategy.jpg')"><span class="mil">Strategy & Advisory</span></div><b>Strategy &amp; Advisory</b></a>
+    <a href="/build-a-brand" data-close><div class="mi" style="background-image:url('/assets/menu-build.jpg')"><span class="mil">Build a Brand</span></div><b>Build a Brand</b></a>
   </div>
   <a class="top" href="/#cases" data-close>Cases</a>
   <a class="top" href="/om-os" data-close>Om os</a>
   <div class="sub">
-    <a href="/om-os" data-close><div class="mi" style="background-image:url('/assets/menu-who.jpg')"></div><b>Hvem vi er</b></a>
-    <a href="/hvorfor-genrise" data-close><div class="mi" style="background-image:url('/assets/menu-why.jpg')"></div><b>Hvorfor Genrise</b></a>
-    <a href="/karriere" data-close><div class="mi" style="background-image:url('/assets/menu-careers.jpg')"></div><b>Karriere</b></a>
+    <a href="/om-os" data-close><div class="mi" style="background-image:url('/assets/menu-who.jpg')"><span class="mil">Hvem vi er</span></div><b>Hvem vi er</b></a>
+    <a href="/hvorfor-genrise" data-close><div class="mi" style="background-image:url('/assets/menu-why.jpg')"><span class="mil">Hvorfor Genrise</span></div><b>Hvorfor Genrise</b></a>
+    <a href="/karriere" data-close><div class="mi" style="background-image:url('/assets/menu-careers.jpg')"><span class="mil">Karriere</span></div><b>Karriere</b></a>
   </div>
   <a class="top" href="/priser" data-close>Priser</a>
   <div class="foot">
@@ -530,7 +532,7 @@
 <article class="disc rv" id="statiske"><div class="intro"><div class="num">06 — Kreativer</div><h2>Statiske annoncer</h2><p>For de fleste Shopify-butikker er kreativer den største enkeltstående løftestang for at skalere betalt annoncering. De fleste brands producerer enten for få kreativer, genbruger de samme formater eller er afhængige af dyre bureauer med langsomme leveringstider. Det skaber en flaskehals, der begrænser, hvor hurtigt I kan teste og skalere.</p><p>Når I kører de samme kreativer for længe, falder præstationen. Friske, højtydende statiske annoncer er det, der holder jeres CAC stabil, når I skalerer forbruget.</p></div><div class="how"><h3>Sådan gør vi</h3><p>Vi producerer løbende højkonverterende statiske annoncer ved hjælp af et AI-drevet system, der er bygget på jeres brands data – ikke gætværk.</p><p>Ved at udnytte top-performerende produkter og gennemprøvede direct response-rammer leverer vi lanceringsklare Meta-annoncer, der dækker alle vinkler: fordele, social proof, smertepunkter og sammenligninger.</p><p>Fordi vores kreative pipeline er direkte integreret i jeres kontostyring, skalerer vi det, der virker, og udskifter det, der ikke gør – i realtid. Ingen bureauaftaler, ingen tre ugers ventetid, kun friske, datadrevne kreativer designet til at sprænge præstationslofter.</p><a class="btn btn-ghost" href="/#kontakt">Kom i gang</a></div></article>
 </div></section>
 <section class="sec dark"><div class="wrap"><div class="center head rv"><div><p class="eyebrow">Overblik</p><h2>Seks discipliner, ét system</h2><p class="lead">Hver kanal har sin rolle. Tilsammen giver de stabil, profitabel vækst.</p></div></div><div class="summary rv"><a href="#meta"><i>01</i><b>Meta Ads</b><span>Den primære kanal til nye kunder for FMCG-brands.</span></a><a href="#google"><i>02</i><b>Google Ads</b><span>Hvor efterspørgsel bliver til omsætning.</span></a><a href="#kreativ"><i>03</i><b>Kreativ strategi</b><span>Vinkler, formater og testrammer, der styrer produktionen.</span></a><a href="#pinterest"><i>04</i><b>Pinterest-annoncer</b><span>Fanger efterspørgsel tidligt i kunderejsen.</span></a><a href="#snapchat"><i>05</i><b>Snapchat-annoncer</b><span>Effektiv rækkevidde for yngre målgrupper og mobil-først produkter.</span></a><a href="#statiske"><i>06</i><b>Statiske annoncer</b><span>Friske, datadrevne kreativer, der holder CAC stabil.</span></a></div></div></section>
-<section class="sec tint"><div class="wrap"><div class="head rv"><div><p class="eyebrow">Andre services</p><h2>Det hænger sammen</h2><p class="lead">Annoncer, website og strategi er ét system hos os – her er de andre dele.</p></div></div><div class="related rv"><a href="/framework"><div class="mi" style="background-image:url('/assets/menu-framework.jpg')"></div><b>Genrise Framework</b><span>Vores samlede vækstmodel i seks trin.</span></a><a href="/shopify-websites"><div class="mi" style="background-image:url('/assets/menu-websites.jpg')"></div><b>Shopify Websites</b><span>CRO, design, udvikling, hastighed og tracking.</span></a><a href="/#services"><div class="mi" style="background-image:url('/assets/menu-strategy.jpg')"></div><b>Strategy & Advisory</b><span>Ugentlig sparring, forecasting og strategisk retning.</span></a></div></div></section>
+<section class="sec tint"><div class="wrap"><div class="head rv"><div><p class="eyebrow">Andre services</p><h2>Det hænger sammen</h2><p class="lead">Annoncer, website og strategi er ét system hos os – her er de andre dele.</p></div></div><div class="related rv"><a href="/framework"><div class="mi" style="background-image:url('/assets/menu-framework.jpg')"></div><b>Genrise Framework</b><span>Vores samlede vækstmodel i seks trin.</span></a><a href="/shopify-websites"><div class="mi" style="background-image:url('/assets/menu-websites.jpg')"></div><b>Shopify Websites</b><span>CRO, design, udvikling, hastighed og tracking.</span></a><a href="/strategy-advisory"><div class="mi" style="background-image:url('/assets/menu-strategy.jpg')"></div><b>Strategy & Advisory</b><span>Ugentlig sparring, forecasting og strategisk retning.</span></a></div></div></section>
 <section class="sec dark cta-sec" id="kontakt"><div class="wrap rv"><p class="eyebrow">Lad os vækste dit brand</p><h2>Klar til at vækste dit Shopify-brand?</h2><p class="lead" style="margin-top:20px">Få en gratis vækstanalyse og en klar plan for dit næste skridt.</p><div class="row"><a class="btn btn-primary" href="/#kontakt">Ja, jeg vil gerne vækste <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="btn btn-ghost" href="mailto:info@genrise.com">info@genrise.com</a></div></div></section>
 </main>
 <footer>
