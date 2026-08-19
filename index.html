@@ -82,6 +82,26 @@
   .burger{display:none;background:none;border:0;color:inherit;width:40px;height:40px;cursor:pointer}
   @media (max-width:860px){.links,.lang{display:none}.burger{display:block}}
 
+
+  /* MEGA MENU (Services) */
+  .has-menu{position:relative}
+  .has-menu > a::after{content:"";display:inline-block;width:5px;height:5px;border-right:1.2px solid currentColor;border-bottom:1.2px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:8px;opacity:.6;transition:transform .2s}
+  .has-menu.open > a::after{transform:rotate(225deg) translateY(-1px)}
+  .mega{position:absolute;left:50%;top:calc(100% + 10px);transform:translate(-50%,6px);width:min(920px,calc(100vw - 40px));background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border:1px solid var(--line);border-radius:18px;padding:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility 0s .2s;color:var(--ink);box-shadow:0 24px 60px -20px rgba(0,0,0,.35)}
+  .has-menu.open .mega,.has-menu:focus-within .mega{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0);transition:opacity .22s ease,transform .22s ease}
+  .mega a{display:block;padding:8px;border-radius:12px;opacity:1!important;transition:background .15s}
+  .mega a:hover{background:rgba(0,0,0,.045)}
+  .mega .mi{aspect-ratio:16/10;border-radius:8px;background:#ddd center/cover no-repeat;margin-bottom:12px;transition:transform .3s ease}
+  .mega a:hover .mi{transform:scale(1.02)}
+  .mega b{display:block;font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:-.01em;margin-bottom:4px}
+  .mega span{display:block;font-size:12.5px;line-height:1.45;color:var(--muted)}
+  .mega .all{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding:12px 10px 4px;border-top:1px solid var(--line);margin-top:4px;font-size:13px;border-radius:0}
+  .mega .all:hover{background:transparent}
+  .mega .all em{font-style:normal;color:var(--muted)}
+  .nav.menu-open:not(.scrolled){color:#fff}
+  .mega.small{width:min(480px,calc(100vw - 40px));grid-template-columns:1fr 1fr}
+  @media (max-width:860px){.mega{display:none}}
+
   /* HERO */
   .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#3B4640 url("/assets/hero.jpg") center right/cover no-repeat;}
   .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,12,11,.62) 0%,rgba(10,12,11,.35) 45%,rgba(10,12,11,.05) 75%),linear-gradient(180deg,rgba(0,0,0,.3),transparent 25%,rgba(12,12,13,.85) 100%);pointer-events:none}
@@ -215,9 +235,24 @@
   <div class="wrap">
     <a class="logo" href="#top">GENRISE</a>
     <ul class="links">
-      <li><a href="#services">Services</a></li>
+      <li class="has-menu" data-menu>
+        <a href="#services" aria-haspopup="true" aria-expanded="false">Services</a>
+        <div class="mega" role="menu" aria-label="Services">
+          <a href="#services" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-framework.jpg')"></div><b>Genrise Framework</b><span>Vores samlede vækstmodel – fra fundament til skalering, i én partnerskabsaftale.</span></a>
+          <a href="#services" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-paid.jpg')"></div><b>Paid Acquisition</b><span>Meta-, TikTok- og Google-annoncer drevet af data og fokus på ROAS.</span></a>
+          <a href="#services" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-websites.jpg')"></div><b>Shopify Websites</b><span>Design og udvikling af Shopify-butikker bygget til konvertering.</span></a>
+          <a href="#services" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-strategy.jpg')"></div><b>Strategy &amp; Advisory</b><span>Ugentlig sparring, forecasting, P&amp;L og strategisk retning for din e-handel.</span></a>
+          <a href="#services" class="all" role="menuitem"><em>Usikker på hvad I har brug for?</em><b style="margin:0;font-size:13px">Book en gratis vækstanalyse →</b></a>
+        </div>
+      </li>
       <li><a href="#cases">Cases</a></li>
-      <li><a href="#om">Om os</a></li>
+      <li class="has-menu" data-menu>
+        <a href="#om" aria-haspopup="true" aria-expanded="false">Om os</a>
+        <div class="mega small" role="menu" aria-label="Om os">
+          <a href="#om" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-who.jpg')"></div><b>Hvem vi er</b><span>Teamet, historien og måden vi arbejder med brands på.</span></a>
+          <a href="#" role="menuitem"><div class="mi" style="background-image:url('/assets/menu-careers.jpg')"></div><b>Karriere</b><span>Ledige stillinger og hvordan det er at arbejde hos Genrise.</span></a>
+        </div>
+      </li>
       <li><a href="#priser">Priser</a></li>
     </ul>
     <div class="navright">
@@ -433,6 +468,19 @@
   onScroll();addEventListener('scroll',onScroll,{passive:true});
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // mega menus: hover on desktop, click/keyboard as fallback
+  document.querySelectorAll('[data-menu]').forEach(item=>{
+    const trg=item.querySelector(':scope > a'); let t;
+    const sync=()=>nav.classList.toggle('menu-open',!!document.querySelector('[data-menu].open'));
+    const open=()=>{clearTimeout(t);document.querySelectorAll('[data-menu].open').forEach(o=>o!==item&&o.classList.remove('open'));item.classList.add('open');trg.setAttribute('aria-expanded','true');sync()};
+    const shut=()=>{item.classList.remove('open');trg.setAttribute('aria-expanded','false');sync()};
+    item.addEventListener('mouseenter',open);
+    item.addEventListener('mouseleave',()=>{t=setTimeout(shut,120)});
+    trg.addEventListener('click',e=>{if(matchMedia('(hover:none)').matches){e.preventDefault();item.classList.contains('open')?shut():open()}});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
+    document.addEventListener('click',e=>{if(!item.contains(e.target))shut()});
+  });
 </script>
 </body>
 </html>
