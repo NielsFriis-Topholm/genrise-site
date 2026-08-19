@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Genrise — Skandinavisk Shopify-vækstpartner</title>
 <meta name="description" content="Vi designer, udvikler og skalerer Shopify-brands i Skandinavien – i en resultatdrevet partnerskabsmodel.">
+<meta property="og:title" content="Genrise — Skandinavisk Shopify-vækstpartner">
+<meta property="og:description" content="Vi designer, udvikler og skalerer Shopify-brands i Skandinavien – i en resultatdrevet partnerskabsmodel.">
+<meta property="og:image" content="/assets/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C0C0D'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-weight='700' font-size='34' fill='%23fff' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -25,7 +30,7 @@
     --r:14px;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
   body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
@@ -71,16 +76,17 @@
   .links a{display:block;padding:8px 12px;border-radius:999px;font-size:14px;opacity:.85;transition:opacity .15s,background .15s}
   .links a:hover{opacity:1;background:rgba(127,127,127,.12)}
   .navright{display:flex;align-items:center;gap:14px}
-  .lang{display:inline-flex;border:1px solid currentColor;border-radius:999px;padding:2px;font-size:11px;letter-spacing:.06em;opacity:.85}
-  .lang span{padding:4px 8px;border-radius:999px}
-  .lang .on{background:currentColor}
-  .lang .on b{color:var(--ink);mix-blend-mode:normal;font-weight:500}
-  .nav:not(.scrolled) .lang .on b{color:var(--ink)}
-  .nav.scrolled .lang .on b{color:#fff}
+  .lang{display:inline-flex;border:1px solid currentColor;border-radius:999px;padding:2px;font-size:11px;letter-spacing:.06em;opacity:.9}
+  .lang button{all:unset;cursor:pointer;padding:4px 9px;border-radius:999px;color:inherit;font:inherit;letter-spacing:inherit;opacity:.75}
+  .lang button.on{background:currentColor;opacity:1}
+  .lang button.on span{color:var(--ink)}
+  .nav.scrolled .lang button.on span{color:#fff}
+  .lang button:focus-visible{outline:2px solid currentColor;outline-offset:2px}
   .nav .btn{height:40px;padding:0 16px}
   .nav:not(.scrolled) .btn-primary{background:#fff;color:var(--ink)}
   .burger{display:none;background:none;border:0;color:inherit;width:40px;height:40px;cursor:pointer}
-  @media (max-width:860px){.links,.lang{display:none}.burger{display:block}}
+  @media (max-width:860px){.links,.navright .lang{display:none}.burger{display:block}}
+  @media (max-width:560px){.navright .btn{display:none}}
 
 
   /* MEGA MENU (Services) */
@@ -101,6 +107,24 @@
   .nav.menu-open:not(.scrolled){color:#fff}
   .mega.small{width:min(480px,calc(100vw - 40px));grid-template-columns:1fr 1fr}
   @media (max-width:860px){.mega{display:none}}
+
+
+  /* MOBILE DRAWER */
+  .burger{position:relative;z-index:70}
+  .drawer{position:fixed;inset:0;z-index:60;background:var(--ink);color:#fff;padding:96px var(--pad) 40px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility 0s .25s}
+  .drawer.open{opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .25s ease}
+  body.drawer-open{overflow:hidden}
+  .drawer a.top{display:flex;justify-content:space-between;align-items:center;font-family:var(--display);font-size:28px;letter-spacing:-.02em;padding:14px 0;border-bottom:1px solid var(--line-dark)}
+  .drawer .sub{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 0 18px;border-bottom:1px solid var(--line-dark)}
+  .drawer .sub a{display:block;font-size:14px}
+  .drawer .sub .mi{aspect-ratio:16/9;border-radius:8px;background:#333 center/cover no-repeat;margin-bottom:8px}
+  .drawer .sub b{display:block;font-weight:500;font-family:var(--display);font-size:15px}
+  .drawer .foot{margin-top:auto;padding-top:28px;display:flex;flex-direction:column;gap:18px}
+  .drawer .foot .btn{justify-content:center;background:#fff;color:var(--ink)}
+  .drawer .lang{align-self:flex-start}
+  .drawer .lang button.on span{color:var(--ink)}
+  .nav.drawer-on{z-index:70;color:#fff;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-color:transparent}
+  @media (min-width:861px){.drawer{display:none}}
 
   /* HERO */
   .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#3B4640 url("/assets/hero.jpg") center right/cover no-repeat;}
@@ -256,15 +280,37 @@
       <li><a href="#priser">Priser</a></li>
     </ul>
     <div class="navright">
-      <span class="lang" aria-label="Sprog"><span class="on"><b>DA</b></span><span>EN</span></span>
+      <span class="lang" role="group" aria-label="Sprog"><button type="button" class="on" data-lang="da" aria-pressed="true"><span>DA</span></button><button type="button" data-lang="en" aria-pressed="false"><span>EN</span></button></span>
       <a class="btn btn-primary" href="#kontakt">Book gratis vækstanalyse</a>
-      <button class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </header>
 
+<nav class="drawer" id="drawer" aria-label="Mobilmenu">
+  <a class="top" href="#services" data-close>Services</a>
+  <div class="sub">
+    <a href="#services" data-close><div class="mi" style="background-image:url('/assets/menu-framework.jpg')"></div><b>Genrise Framework</b></a>
+    <a href="#services" data-close><div class="mi" style="background-image:url('/assets/menu-paid.jpg')"></div><b>Paid Acquisition</b></a>
+    <a href="#services" data-close><div class="mi" style="background-image:url('/assets/menu-websites.jpg')"></div><b>Shopify Websites</b></a>
+    <a href="#services" data-close><div class="mi" style="background-image:url('/assets/menu-strategy.jpg')"></div><b>Strategy &amp; Advisory</b></a>
+  </div>
+  <a class="top" href="#cases" data-close>Cases</a>
+  <a class="top" href="#om" data-close>Om os</a>
+  <div class="sub">
+    <a href="#om" data-close><div class="mi" style="background-image:url('/assets/menu-who.jpg')"></div><b>Hvem vi er</b></a>
+    <a href="#" data-close><div class="mi" style="background-image:url('/assets/menu-careers.jpg')"></div><b>Karriere</b></a>
+  </div>
+  <a class="top" href="#priser" data-close>Priser</a>
+  <div class="foot">
+    <span class="lang" role="group" aria-label="Sprog"><button type="button" class="on" data-lang="da" aria-pressed="true"><span>DA</span></button><button type="button" data-lang="en" aria-pressed="false"><span>EN</span></button></span>
+    <a class="btn btn-primary" href="#kontakt" data-close>Book gratis vækstanalyse</a>
+  </div>
+</nav>
+
+<a href="#main" class="skip" style="position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:8px 12px;border-radius:8px;z-index:100" onfocus="this.style.left=&quot;12px&quot;" onblur="this.style.left=&quot;-999px&quot;">Gå til indhold</a>
 <main id="top">
-  <section class="hero">
+  <section class="hero" id="main">
     <div class="wrap">
       <p class="eyebrow" style="color:rgba(255,255,255,.6)">Vækst dit brand</p>
       <h1>Skandinavisk Shopify-vækstpartner</h1>
@@ -481,6 +527,39 @@
     document.addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
     document.addEventListener('click',e=>{if(!item.contains(e.target))shut()});
   });
+
+  // mobile drawer
+  const drawer=document.getElementById('drawer'), burger=document.querySelector('.burger');
+  const ico={open:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',close:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>'};
+  const setDrawer=on=>{drawer.classList.toggle('open',on);document.body.classList.toggle('drawer-open',on);nav.classList.toggle('drawer-on',on);burger.setAttribute('aria-expanded',on);burger.innerHTML=on?ico.close:ico.open};
+  burger.addEventListener('click',()=>setDrawer(!drawer.classList.contains('open')));
+  drawer.querySelectorAll('[data-close]').forEach(a=>a.addEventListener('click',()=>setDrawer(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setDrawer(false)});
+  matchMedia('(min-width:861px)').addEventListener('change',e=>{if(e.matches)setDrawer(false)});
+
+  // i18n — dansk er kildeteksten i HTML'en; engelsk kommer fra ordbogen herunder
+  const EN={"Vores samlede vækstmodel – fra fundament til skalering, i én partnerskabsaftale.": "Our complete growth model – from foundation to scale, in one partnership agreement.", "Meta-, TikTok- og Google-annoncer drevet af data og fokus på ROAS.": "Meta, TikTok and Google ads driven by data with a focus on ROAS.", "Design og udvikling af Shopify-butikker bygget til konvertering.": "Design and development of Shopify stores built to convert.", "Ugentlig sparring, forecasting, P&L og strategisk retning for din e-handel.": "Weekly sparring, forecasting, P&L and strategic direction for your e-commerce.", "Usikker på hvad I har brug for?": "Not sure what you need?", "Book en gratis vækstanalyse →": "Book a free growth audit →", "Om os": "About", "Hvem vi er": "Who we are", "Teamet, historien og måden vi arbejder med brands på.": "The team, the story and how we work with brands.", "Karriere": "Careers", "Ledige stillinger og hvordan det er at arbejde hos Genrise.": "Open positions and what it's like to work at Genrise.", "Priser": "Pricing", "Book gratis vækstanalyse": "Book a free growth audit", "Vækst dit brand": "Scale your brand", "Skandinavisk Shopify-vækstpartner": "Scandinavian Shopify Growth Partner", "Vi designer, udvikler skræddersyede løsninger, kører betalte annoncer og leverer ugentlige strategimøder som din personlige Shopify-partner – i en incitamentsbaseret, resultatdrevet model.": "We design, develop custom solutions, run your paid ads and deliver weekly strategy meetings as your personal Shopify partner – all in an incentivised, performance-driven model.", "Se hvordan vi arbejder": "See how we work", "Brands vi har skaleret": "Brands we've scaled", "Genererede visninger": "Impressions generated", "På tværs af betalte kampagner": "Across paid campaigns", "Genereret omsætning": "Revenue generated", "For partnerbrands": "For partner brands", "Opnået ROAS": "ROAS achieved", "Afkast af annonceforbrug": "Return on ad spend", "Brands skaleret": "Brands scaled", "I hele Norden": "Across the Nordics", "Hvad vi gør": "What we do", "Én partner til hele din Shopify-vækst": "One partner for all of your Shopify growth", "Vi hjælper næste generations brands med at nå deres fulde potentiale i et social-first miljø, hvor kampen om forbrugernes opmærksomhed er hård.": "We help next-generation brands reach their full potential in a social-first world where the fight for consumer attention is fierce.", "Vi designer, udvikler og skalerer FMCG-brands på Shopify, understøttet af data, forecasting, P&L, AI og realtids e-handelsindsigter – som en udvidet arm, der sikrer et stærkt fundament.": "We design, develop and scale FMCG brands on Shopify, backed by data, forecasting, P&L, AI and real-time e-commerce insights – an extended arm that secures a strong foundation.", "Se alle services": "See all services", "Produkt": "Product", "Sourcer og validerer vinderprodukter": "Source and validate winning products", "Bygger din brandidentitet & positionering": "Build your brand identity & positioning", "Udvikler og optimerer din Shopify-store": "Develop and optimise your Shopify store", "Optimerer UX & CRO": "Optimise UX & CRO", "Contentstrategi & kreativ retning": "Content strategy & creative direction", "Kører performance-drevne annoncer": "Run performance-driven ads", "Strategi": "Strategy", "Strategisk rådgivning til e-handel": "Strategic e-commerce advisory", "Personlig guidance og hjælp": "Personal guidance and support", "Vi transformerer ambitiøse digitale brands": "We transform ambitious digital brands", "I partnerskab med brands indenfor beauty, fashion og lifestyle.": "In partnership with brands in beauty, fashion and lifestyle.", "Se alle cases": "See all cases", "Dit brand": "Your brand", "Næste case?": "Next case?", "Sådan arbejder vi": "How we work", "Med kunder i hele Skandinavien forener vi Shopify, performance og vækstsystemer i én problemfri drift": "With clients across Scandinavia, we unite Shopify, performance and growth systems in one seamless operation", "360° Shopify-vækstløsning": "360° Shopify growth solution", "Vi håndterer det hele. Penge ind. Stress ud.": "We handle everything. Money in. Stress out.", "Resultatbaseret partnerskab": "Performance-based partnership", "At vækste er svært. Vi gør det nemt.": "Growing is hard. We make it easy.", "Altid tilgængelig": "Always available", "Vores team med rødder i Danmark er altid klar til at hjælpe dig.": "Our Denmark-based team is always ready to help you.", "Ingen høje faste honorarer": "No high fixed fees", "Vi værdsætter langsigtede partnerskaber.": "We value long-term partnerships.", "Bygget til at skalere": "Built to scale", "Grundlæggere, der skalerer seriøse brands, stoler på os": "Founders scaling serious brands trust us", "Skalering handler ikke om at bevæge sig hurtigere. Det handler om at bygge det rette fundament, før væksten accelererer.": "Scaling isn't about moving faster. It's about building the right foundation before growth accelerates.", "“Vi begyndte at arbejde sammen i april, og siden da er vores salg mere end fordoblet. Kan varmt anbefales.”": "“We started working together in April, and since then our sales have more than doubled. Highly recommended.”", "Stifter": "Founder", "“Genrise har været en fremragende partner gennem hele processen. Deres tekniske ekspertise og stærke faglige grundlag har gjort samarbejdet gnidningsfrit.”": "“Genrise has been an outstanding partner throughout the process. Their technical expertise and strong professional foundation made the collaboration seamless.”", "Ejer": "Owner", "Teamet": "The team", "Et team med Shopify-baggrund": "A team with a Shopify background", "Siden 2023 har vi hjulpet og arbejdet med nogle af de hurtigst voksende brands i Skandinavien – fra skincare, supplements, fashion og jewelry til interior, lifestyle og FMCG. Alle på teamet har en naturlig interesse for og online baggrund fra Shopify.": "Since 2023 we've helped and worked with some of the fastest-growing brands in Scandinavia – from skincare, supplements, fashion and jewelry to interior, lifestyle and FMCG. Everyone on the team has a natural interest in and online background from Shopify.", "Specialist i e-handelsvækst": "E-commerce growth specialist", "Skab dit eget brand": "Build your own brand", "Vi giver dig det fulde team og den fulde infrastruktur til at lancere og vækste dit eget produkt og brand.": "We give you the full team and the full infrastructure to launch and grow your own product and brand.", "Læs om Build a Brand": "Read about Build a Brand", "Produktudvikling": "Product development", "Vores interne designere og produktudviklere arbejder sammen med dig om at skabe produkter af højeste kvalitet.": "Our in-house designers and product developers work with you to create products of the highest quality.", "Produktion": "Production", "Vores netværk af over 100 fabrikker er gennemtestede med en dokumenteret track record.": "Our network of over 100 factories is thoroughly vetted with a documented track record.", "Din e-handelsbutik": "Your online store", "Vi bygger og skalerer din e-handelsbutik, så dit publikum kan få den bedste købsoplevelse.": "We build and scale your online store so your audience gets the best shopping experience.", "Spørgsmål stiftere ofte stiller": "Questions founders often ask", "Klare svar. Ingen overraskelser.": "Clear answers. No surprises.", "Hvilke typer brands arbejder I med?": "What types of brands do you work with?", "Primært ambitiøse D2C-brands inden for beauty, fashion, lifestyle og FMCG, der allerede sælger – eller er klar til at sælge – på Shopify.": "Primarily ambitious D2C brands in beauty, fashion, lifestyle and FMCG that already sell – or are ready to sell – on Shopify.", "Hvad betyder jeres performance model?": "What does your performance model mean?", "Vores honorar er bundet op på resultaterne. Ingen høje faste beløb – vi vokser, når du vokser.": "Our fee is tied to results. No high fixed amounts – we grow when you grow.", "Arbejder I kun med Shopify-brands?": "Do you only work with Shopify brands?", "Ja. Vi fokuserer udelukkende på Shopify, fordi det er en af de stærkeste platforme for direct-to-consumer brands.": "Yes. We focus exclusively on Shopify because it's one of the strongest platforms for direct-to-consumer brands.", "Hvor hurtigt kan vi forvente resultater?": "How quickly can we expect results?", "Det afhænger af udgangspunktet, men typisk ser vi de første målbare effekter inden for de første 60–90 dage.": "It depends on the starting point, but we typically see the first measurable effects within the first 60–90 days.", "Hvordan måler vi succes i et samarbejde?": "How do we measure success in a partnership?", "På omsætning, ROAS, konverteringsrate og margin – i ét fælles dashboard, gennemgået på ugentlige strategimøder.": "On revenue, ROAS, conversion rate and margin – in one shared dashboard, reviewed at weekly strategy meetings.", "Kræver I lange kontrakter?": "Do you require long contracts?", "Nej. Vi tror på partnerskaber, der holder, fordi de virker – ikke fordi de er låst.": "No. We believe in partnerships that last because they work – not because they're locked in.", "Bygger I nye Shopify-butikker, eller optimerer I kun eksisterende?": "Do you build new Shopify stores, or only optimise existing ones?", "Begge dele. Vi bygger fra bunden og optimerer eksisterende butikker på UX, CRO og teknik.": "Both. We build from scratch and optimise existing stores on UX, CRO and tech.", "Hvordan kommunikerer I med jeres kunder?": "How do you communicate with your clients?", "Ugentlige møder, en fælles Slack-kanal og 24/7-support.": "Weekly meetings, a shared Slack channel and 24/7 support.", "Hvilken teknologi bruger I?": "What technology do you use?", "Shopify, Klaviyo, Meta, TikTok, Google og en række data- og AI-værktøjer til forecasting og indsigter.": "Shopify, Klaviyo, Meta, TikTok, Google and a range of data and AI tools for forecasting and insights.", "Hvad gør jeg, hvis jeg ejer WooCommerce?": "What if I'm on WooCommerce?", "Vi hjælper med migreringen til Shopify som første skridt i samarbejdet.": "We help with the migration to Shopify as the first step of the partnership.", "Hvordan får jeg en gratis hjemmeside fra GENRISE?": "How do I get a free website from GENRISE?", "Book en gratis vækstanalyse – så gennemgår vi mulighederne sammen.": "Book a free growth audit – and we'll go through the options together.", "Lad os vækste dit brand": "Let's grow your brand", "Klar til at vækste dit Shopify-brand?": "Ready to grow your Shopify brand?", "Få en gratis vækstanalyse og en klar plan for dit næste skridt.": "Get a free growth audit and a clear plan for your next step.", "Ja, jeg vil gerne vækste": "Yes, I want to grow", "Skandinavisk vækstpartner for Shopify-butikker.": "Scandinavian growth partner for Shopify stores.", "Ofte stillede spørgsmål": "FAQ", "Juridisk": "Legal", "Privatlivspolitik": "Privacy policy", "Handelsbetingelser": "Terms of service", "Kontakt": "Contact", "Højbovej 1, 8600 Silkeborg, Danmark": "Højbovej 1, 8600 Silkeborg, Denmark", "© Genrise 2026. Alle rettigheder forbeholdes.": "© Genrise 2026. All rights reserved.", "Afspil video": "Play video", "Sprog": "Language"};
+  const DA={};for(const k in EN)DA[EN[k]]=k;
+  const META={da:{title:'Genrise — Skandinavisk Shopify-vækstpartner',desc:'Vi designer, udvikler og skalerer Shopify-brands i Skandinavien – i en resultatdrevet partnerskabsmodel.'},en:{title:'Genrise — Scandinavian Shopify Growth Partner',desc:'We design, develop and scale Shopify brands across Scandinavia – in a performance-driven partnership model.'}};
+  function translate(map){
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentNode.closest('script,style')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+    let n;while(n=walker.nextNode()){const raw=n.nodeValue,t=raw.trim();if(t&&map[t]){n.nodeValue=raw.replace(t,map[t])}}
+    document.querySelectorAll('[aria-label]').forEach(el=>{const v=el.getAttribute('aria-label');if(map[v])el.setAttribute('aria-label',map[v])});
+  }
+  let current='da';
+  function setLang(l){
+    if(l===current)return;
+    translate(l==='en'?EN:DA);current=l;
+    document.documentElement.lang=l;document.title=META[l].title;
+    const d=document.querySelector('meta[name=description]');if(d)d.content=META[l].desc;
+    document.querySelectorAll('[data-lang]').forEach(b=>{const on=b.dataset.lang===l;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+    try{localStorage.setItem('genrise-lang',l)}catch(e){}
+    try{const u=new URL(location);l==='en'?u.searchParams.set('lang','en'):u.searchParams.delete('lang');history.replaceState(null,'',u)}catch(e){}
+  }
+  document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  (function(){let l=null;try{l=new URL(location).searchParams.get('lang')}catch(e){}
+    if(!l){try{l=localStorage.getItem('genrise-lang')}catch(e){}}
+    if(l==='en')setLang('en')})();
 </script>
 </body>
 </html>
