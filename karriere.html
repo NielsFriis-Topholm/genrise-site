@@ -627,6 +627,10 @@
   document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
   (function(){let l=null;try{l=new URL(location).searchParams.get('lang')}catch(e){}
     if(!l){try{l=localStorage.getItem('genrise-lang')}catch(e){}}
+    if(!l){let tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+      const daBrowser=/^da\b|^da-/i.test(navigator.language||'');
+      const inDK=tz==='Europe/Copenhagen';
+      if(!daBrowser&&!inDK)l='en'}
     if(l==='en')setLang('en')})();
 </script>
 </body>
