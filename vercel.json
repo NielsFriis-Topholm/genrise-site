@@ -2,6 +2,106 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
-    { "source": "/assets/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" } ] }
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/om-os",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/om-os",
+      "permanent": true
+    },
+    {
+      "source": "/who-we-are",
+      "destination": "/om-os",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/priser",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/karriere",
+      "permanent": true
+    },
+    {
+      "source": "/career",
+      "destination": "/karriere",
+      "permanent": true
+    },
+    {
+      "source": "/why-us",
+      "destination": "/hvorfor-genrise",
+      "permanent": true
+    },
+    {
+      "source": "/why-genrise",
+      "destination": "/hvorfor-genrise",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/priser",
+      "permanent": true
+    },
+    {
+      "source": "/faqs",
+      "destination": "/priser",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/service",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/paid-advertising",
+      "destination": "/paid-acquisition",
+      "permanent": true
+    },
+    {
+      "source": "/betalt-annoncering",
+      "destination": "/paid-acquisition",
+      "permanent": true
+    },
+    {
+      "source": "/shopify-websites-old",
+      "destination": "/shopify-websites",
+      "permanent": true
+    },
+    {
+      "source": "/genrise-framework",
+      "destination": "/framework",
+      "permanent": true
+    },
+    {
+      "source": "/strategy",
+      "destination": "/strategy-advisory",
+      "permanent": true
+    }
   ]
 }
