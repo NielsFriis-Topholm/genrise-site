@@ -44,134 +44,180 @@
 <!-- Struktureret data til Google -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://genrise.com/#org",
+   "name": "Genrise",
+   "url": "https://genrise.com/",
+   "logo": "https://genrise.com/assets/icon-512.png",
+   "image": "https://genrise.com/assets/og-image.jpg",
+   "description": "Skandinavisk vækstpartner for Shopify-butikker – design, udvikling og performance marketing i en resultatdrevet model.",
+   "email": "info@genrise.com",
+   "foundingDate": "2023",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Højbovej 1",
+    "postalCode": "8600",
+    "addressLocality": "Silkeborg",
+    "addressCountry": "DK"
+   },
+   "areaServed": [
+    "DK",
+    "SE",
+    "NO",
+    "FI"
+   ],
+   "knowsAbout": [
+    "Shopify",
+    "E-commerce",
+    "Paid social",
+    "Conversion rate optimisation",
+    "Klaviyo"
+   ],
+   "founder": [
     {
-      "@type": "Organization",
-      "@id": "https://genrise.com/#org",
-      "name": "Genrise",
-      "url": "https://genrise.com/",
-      "logo": "https://genrise.com/assets/icon-512.png",
-      "image": "https://genrise.com/assets/og-image.jpg",
-      "description": "Skandinavisk vækstpartner for Shopify-butikker – design, udvikling og performance marketing i en resultatdrevet model.",
-      "email": "info@genrise.com",
-      "foundingDate": "2023",
-      "address": {"@type": "PostalAddress","streetAddress": "Højbovej 1","postalCode": "8600","addressLocality": "Silkeborg","addressCountry": "DK"},
-      "areaServed": ["DK","SE","NO","FI"],
-      "knowsAbout": ["Shopify","E-commerce","Paid social","Conversion rate optimisation","Klaviyo"],
-      "founder": [{"@type": "Person","name": "Niels Friis-Topholm","jobTitle": "CEO"},{"@type": "Person","name": "Christian Friis-Topholm"}]
+     "@type": "Person",
+     "name": "Niels Friis-Topholm",
+     "jobTitle": "CEO"
     },
     {
-      "@type": "WebSite",
-      "@id": "https://genrise.com/#website",
-      "url": "https://genrise.com/",
-      "name": "Genrise",
-      "publisher": {"@id": "https://genrise.com/#org"},
-      "inLanguage": ["da","en"]
+     "@type": "Person",
+     "name": "Christian Friis-Topholm"
+    }
+   ],
+   "legalName": "Genrise ApS",
+   "vatID": "DK46207874",
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "CVR",
+    "value": "46207874"
+   },
+   "sameAs": [
+    "https://datacvr.virk.dk/enhed/virksomhed/46207874"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://genrise.com/#website",
+   "url": "https://genrise.com/",
+   "name": "Genrise",
+   "publisher": {
+    "@id": "https://genrise.com/#org"
+   },
+   "inLanguage": [
+    "da",
+    "en"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://genrise.com/#webpage",
+   "url": "https://genrise.com/",
+   "name": "Genrise — Skandinavisk Shopify-vækstpartner",
+   "isPartOf": {
+    "@id": "https://genrise.com/#website"
+   },
+   "about": {
+    "@id": "https://genrise.com/#org"
+   },
+   "inLanguage": "da"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Hvilke typer brands arbejder I med?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vi arbejder med små og mellemstore Shopify-brands, der vil vokse. De fleste af vores kunder er inden for skincare, fashion, smykker, lifestyle, home goods eller FMCG (Fast-Moving Consumer Goods). Har du et godt produkt og vil vokse, kan vi hjælpe dig. Vi arbejder både med brands, der allerede sælger online, og brands, der skal have bygget en ny Shopify-butik fra bunden."
+     }
     },
     {
-      "@type": "WebPage",
-      "@id": "https://genrise.com/#webpage",
-      "url": "https://genrise.com/",
-      "name": "Genrise — Skandinavisk Shopify-vækstpartner",
-      "isPartOf": {"@id": "https://genrise.com/#website"},
-      "about": {"@id": "https://genrise.com/#org"},
-      "inLanguage": "da"
+     "@type": "Question",
+     "name": "Hvad betyder jeres performance model?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vi holder det enkelt. En del af vores honorar afhænger af de resultater, vi skaber for din butik. Vokser du, tjener vi mere. Gør du ikke, gør vi heller ikke. Det betyder, at vores mål er fuldt ud på linje med dine. Vi tager en kortsigtet risiko, fordi vi forventer langsigtet vækst for begge parter."
+     }
     },
     {
- "@type": "FAQPage",
- "mainEntity": [
-  {
-   "@type": "Question",
-   "name": "Hvilke typer brands arbejder I med?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Vi arbejder med små og mellemstore Shopify-brands, der vil vokse. De fleste af vores kunder er inden for skincare, fashion, smykker, lifestyle, home goods eller FMCG (Fast-Moving Consumer Goods). Har du et godt produkt og vil vokse, kan vi hjælpe dig. Vi arbejder både med brands, der allerede sælger online, og brands, der skal have bygget en ny Shopify-butik fra bunden."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Hvad betyder jeres performance model?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Vi holder det enkelt. En del af vores honorar afhænger af de resultater, vi skaber for din butik. Vokser du, tjener vi mere. Gør du ikke, gør vi heller ikke. Det betyder, at vores mål er fuldt ud på linje med dine. Vi tager en kortsigtet risiko, fordi vi forventer langsigtet vækst for begge parter."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Arbejder I kun med Shopify-brands?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Ja. Vi er et Shopify-first bureau. Shopify giver os mulighed for at bygge, skalere, tracke og optimere i ét økosystem, hvilket giver stærkere langsigtede resultater for vores kunder. Vil du flytte din butik til Shopify eller have bygget en ny fra bunden – med fortsat vækst bagefter – håndterer vi hele processen for dig."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Hvor hurtigt kan vi forvente resultater?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Du vil se forbedringer i struktur, opsætning og klarhed inden for de første par uger. Stærkere performance-forbedringer viser sig typisk inden for 30 til 90 dage, afhængigt af dit udgangspunkt, produktmiks og marked."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Hvordan måler vi succes i et samarbejde?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Vi holder det enkelt. Succes måles på reel vækst. Vi kigger på det, der betyder noget: Omsætningsvækst · Vækst i nye kunder · Værdi af tilbagevendende kunder · Forbedret butikssundhed og profitabilitet. Vokser din butik stabilt og forudsigeligt, virker samarbejdet. Gør den ikke, handler vi hurtigt og retter det."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Kræver I lange kontrakter?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Nej. Vi holder det enkelt. Vores aftaler kører måned til måned med kort opsigelse, fordi vi mener, du skal blive hos os på grund af resultaterne – ikke en lang bindende kontrakt."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Bygger I nye Shopify-butikker, eller optimerer I kun eksisterende?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Vi gør begge dele. Vi designer og bygger nye Shopify-butikker fra bunden, og vi optimerer eksisterende butikker til højere konvertering og vækst. Vil du have en ny butik eller mere ud af den, du allerede har, kan vi hjælpe dig."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Hvordan kommunikerer I med jeres kunder?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Vi holder kommunikationen hurtig og direkte. Du får en fælles Slack-kanal med os, ugentlige strategisamtaler og hurtige svartider i løbet af ugen. Alt foregår ét sted, så du altid ved, hvad vi arbejder på, og hvad der kommer næst."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Hvilken teknologi bruger I?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Vi arbejder med de værktøjer, der giver de bedste resultater for Shopify-brands. Vores kernestack omfatter Shopify, Klaviyo, Meta Ads, Google Ads, GA4, Ads Manager, TikTok Ads, Figma og Reaktion. Vi bruger kun teknologi, der hjælper os med at bygge, skalere og tracke din butik på en klar og pålidelig måde."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Hvad gør jeg, hvis jeg ejer WooCommerce?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Vil du blive på WooCommerce, kan vi ikke hjælpe dig. Vil du flytte til Shopify, håndterer vi hele migreringen og bygger den nye butik for dig fra start til slut."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Hvordan får jeg en gratis hjemmeside fra GENRISE?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Som en del af et samarbejde med GENRISE kan du få et gratis website på Shopify. Book et opkald med os eller send en mail for at ansøge. Vi gennemgår dit brand og bekræfter, om du kvalificerer dig."
-   }
+     "@type": "Question",
+     "name": "Arbejder I kun med Shopify-brands?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ja. Vi er et Shopify-first bureau. Shopify giver os mulighed for at bygge, skalere, tracke og optimere i ét økosystem, hvilket giver stærkere langsigtede resultater for vores kunder. Vil du flytte din butik til Shopify eller have bygget en ny fra bunden – med fortsat vækst bagefter – håndterer vi hele processen for dig."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Hvor hurtigt kan vi forvente resultater?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Du vil se forbedringer i struktur, opsætning og klarhed inden for de første par uger. Stærkere performance-forbedringer viser sig typisk inden for 30 til 90 dage, afhængigt af dit udgangspunkt, produktmiks og marked."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Hvordan måler vi succes i et samarbejde?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vi holder det enkelt. Succes måles på reel vækst. Vi kigger på det, der betyder noget: Omsætningsvækst · Vækst i nye kunder · Værdi af tilbagevendende kunder · Forbedret butikssundhed og profitabilitet. Vokser din butik stabilt og forudsigeligt, virker samarbejdet. Gør den ikke, handler vi hurtigt og retter det."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Kræver I lange kontrakter?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nej. Vi holder det enkelt. Vores aftaler kører måned til måned med kort opsigelse, fordi vi mener, du skal blive hos os på grund af resultaterne – ikke en lang bindende kontrakt."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Bygger I nye Shopify-butikker, eller optimerer I kun eksisterende?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vi gør begge dele. Vi designer og bygger nye Shopify-butikker fra bunden, og vi optimerer eksisterende butikker til højere konvertering og vækst. Vil du have en ny butik eller mere ud af den, du allerede har, kan vi hjælpe dig."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Hvordan kommunikerer I med jeres kunder?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vi holder kommunikationen hurtig og direkte. Du får en fælles Slack-kanal med os, ugentlige strategisamtaler og hurtige svartider i løbet af ugen. Alt foregår ét sted, så du altid ved, hvad vi arbejder på, og hvad der kommer næst."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Hvilken teknologi bruger I?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vi arbejder med de værktøjer, der giver de bedste resultater for Shopify-brands. Vores kernestack omfatter Shopify, Klaviyo, Meta Ads, Google Ads, GA4, Ads Manager, TikTok Ads, Figma og Reaktion. Vi bruger kun teknologi, der hjælper os med at bygge, skalere og tracke din butik på en klar og pålidelig måde."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Hvad gør jeg, hvis jeg ejer WooCommerce?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vil du blive på WooCommerce, kan vi ikke hjælpe dig. Vil du flytte til Shopify, håndterer vi hele migreringen og bygger den nye butik for dig fra start til slut."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Hvordan får jeg en gratis hjemmeside fra GENRISE?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Som en del af et samarbejde med GENRISE kan du få et gratis website på Shopify. Book et opkald med os eller send en mail for at ansøge. Vi gennemgår dit brand og bekræfter, om du kvalificerer dig."
+     }
+    }
+   ]
   }
  ]
-}
-  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
