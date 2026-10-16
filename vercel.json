@@ -102,6 +102,36 @@
       "source": "/strategy",
       "destination": "/strategy-advisory",
       "permanent": true
+    },
+    {
+      "source": "/privatliv",
+      "destination": "/privatlivspolitik",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privatlivspolitik",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privatlivspolitik",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/privatlivspolitik",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/privatlivspolitik",
+      "permanent": true
+    },
+    {
+      "source": "/vilkaar",
+      "destination": "/privatlivspolitik",
+      "permanent": true
     }
   ]
 }
