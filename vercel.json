@@ -120,17 +120,27 @@
     },
     {
       "source": "/terms",
-      "destination": "/privatlivspolitik",
+      "destination": "/handelsbetingelser",
       "permanent": true
     },
     {
       "source": "/terms-of-service",
-      "destination": "/privatlivspolitik",
+      "destination": "/handelsbetingelser",
       "permanent": true
     },
     {
       "source": "/vilkaar",
-      "destination": "/privatlivspolitik",
+      "destination": "/handelsbetingelser",
+      "permanent": true
+    },
+    {
+      "source": "/vilkår",
+      "destination": "/handelsbetingelser",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/handelsbetingelser",
       "permanent": true
     }
   ]

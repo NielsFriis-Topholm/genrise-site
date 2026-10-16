@@ -70,4 +70,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://genrise.com/privatlivspolitik</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/privatlivspolitik"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/privatlivspolitik?lang=en"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://genrise.com/handelsbetingelser</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://genrise.com/handelsbetingelser"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://genrise.com/handelsbetingelser?lang=en"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
